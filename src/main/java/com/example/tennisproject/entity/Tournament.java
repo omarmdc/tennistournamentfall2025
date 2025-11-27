@@ -28,4 +28,6 @@ public class Tournament {
     )
     private List<Player> players;
 
+    // Now we create getters and setters for every entity
+
 }

@@ -1,17 +1,20 @@
 package com.example.tennisproject.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Match {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "player1_id")
     private Player player1;
 
 
-    // getters and setters
+    // Now we create getters and setters
+    // Testing my github connection
 }
