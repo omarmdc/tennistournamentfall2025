@@ -15,21 +15,65 @@ public class Player {               // This is the Player table in our database
     @GeneratedValue(strategy = GenerationType.IDENTITY) // When a new record is added, increment the number
     private Long id;
 
-    private String playerName;
+    private String name;
 
-    private String playerCountry;
+    private String country;
 
-    private int playerAge;
+    private int age;
 
-    private int playerWins;
+    private int wins;
 
-    private int playerLosses;
-
-    // Create getters and setters for every attribute
+    private int losses;
 
 
+    // Getters and Setters creation
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public void setLosses(int losses) {
+        this.losses = losses;
+    }
 
 }

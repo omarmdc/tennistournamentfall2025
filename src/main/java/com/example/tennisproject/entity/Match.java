@@ -34,6 +34,63 @@ public class Match {                // This is the 'Match' table in our database
     private String score;
 
 
-    // Now we create getters and setters
+    // Getters and Setters creation
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public void setPlayer1(Player player1) {
+        this.player1 = player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer2(Player player2) {
+        this.player2 = player2;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
+    }
+
+    public Tournament getTournamentName() {
+        return tournamentName;
+    }
+
+    public void setTournamentName(Tournament tournamentName) {
+        this.tournamentName = tournamentName;
+    }
+
+    public LocalDate getMatchDate() {
+        return matchDate;
+    }
+
+    public void setMatchDate(LocalDate matchDate) {
+        this.matchDate = matchDate;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
 
 }
