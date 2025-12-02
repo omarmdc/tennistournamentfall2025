@@ -8,6 +8,6 @@ public class  TennisprojectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TennisprojectApplication.class, args);
-        System.out.println("Hello World");
+        System.out.println("Welcome to my Java Tennis Project!");
 	}
 }
