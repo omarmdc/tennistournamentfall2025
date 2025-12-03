@@ -35,7 +35,6 @@ public class Tournament {               // This is the 'Tournament' table in our
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -43,7 +42,6 @@ public class Tournament {               // This is the 'Tournament' table in our
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -51,7 +49,6 @@ public class Tournament {               // This is the 'Tournament' table in our
     public String getLocation() {
         return location;
     }
-
     public void setLocation(String location) {
         this.location = location;
     }
@@ -59,7 +56,6 @@ public class Tournament {               // This is the 'Tournament' table in our
     public LocalDate getStartDate() {
         return startDate;
     }
-
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
@@ -67,7 +63,6 @@ public class Tournament {               // This is the 'Tournament' table in our
     public LocalDate getEndDate() {
         return endDate;
     }
-
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
@@ -75,7 +70,6 @@ public class Tournament {               // This is the 'Tournament' table in our
     public List<Player> getPlayers() {
         return players;
     }
-
     public void setPlayers(List<Player> players) {
         this.players = players;
     }

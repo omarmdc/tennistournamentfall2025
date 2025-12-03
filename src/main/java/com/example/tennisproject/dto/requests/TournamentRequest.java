@@ -1,6 +1,7 @@
 package com.example.tennisproject.dto.requests;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class TournamentRequest {
 

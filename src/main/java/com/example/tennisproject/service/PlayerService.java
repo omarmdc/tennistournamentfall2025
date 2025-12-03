@@ -21,11 +21,13 @@ public class PlayerService {
 
 
     // Here we will create our Helper Methods: converter() and responseMaker()
-    // These will help us convert and output info in a specific format (ex: adding the player ID)
+    // These will help us convert and output info in a specific format (ex: adding the ID)
 
     // converter()
     private Player converter(PlayerRequest userRequest) {
+
         Player player = new Player();
+
         player.setName(userRequest.getName());
         player.setAge(userRequest.getAge());
         player.setCountry(userRequest.getCountry());
@@ -37,7 +39,9 @@ public class PlayerService {
 
     //responseMaker()
     private PlayerResponse responseMaker(Player player) {
+
         PlayerResponse response = new PlayerResponse();
+
         response.setId(player.getId());
         response.setName(player.getName());
         response.setAge(player.getAge());
@@ -53,7 +57,7 @@ public class PlayerService {
     // Now, our Public Methods: getAllPlayers() | getPlayerById() | registerPlayer() | updatePlayer() | deletePlayer()
 
 
-    //1. 'getAllPlayers()' Method
+    // 1. 'getAllPlayers()' Method
     public List<PlayerResponse> getAllPlayers() {
 
         List<Player> allPlayers = playerRepository.findAll();
@@ -67,7 +71,7 @@ public class PlayerService {
     }
 
 
-    //2. 'getPlayerById()' Method
+    // 2. 'getPlayerById()' Method
     public PlayerResponse getPlayerById(Long id) {
 
         try {
@@ -122,7 +126,4 @@ public class PlayerService {
             throw new RuntimeException("Sorry, we weren't able to find a player with ID: " + id);
         }
     }
-
-
-
 }

@@ -1,6 +1,7 @@
 package com.example.tennisproject.dto.responses;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class TournamentResponse {
 
@@ -11,6 +12,7 @@ public class TournamentResponse {
     private String location;
     private LocalDate startDate;
     private LocalDate endDate;
+    private List<Long> playerIds;
 
 
     // Getters and Setters creation
@@ -52,5 +54,15 @@ public class TournamentResponse {
     }
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+
+    public List<Long> getPlayerIds() {
+        return playerIds;
+    }
+
+
+    public void setPlayerIds(List<Long> playerIds) {
+        this.playerIds = playerIds;
     }
 }

@@ -18,8 +18,12 @@ import java.util.List;
 @RequestMapping("/players")
 public class PlayerController {
 
+
     @Autowired
-    private PlayerService playerService;//
+    private PlayerService playerService;
+
+
+
     // 1) Getting all the players (GET call)
    @GetMapping
     public List<PlayerResponse> getAllPlayers() {
@@ -32,6 +36,7 @@ public class PlayerController {
     public PlayerResponse getPlayerById(@PathVariable Long id) {
        return playerService.getPlayerById(id);
     }
+
 
     // 3) Register a new Player (POST call)
     @PostMapping
@@ -46,12 +51,11 @@ public class PlayerController {
        return playerService.updatePlayer(id, player);
     }
 
+
     // 5) Delete an existing player (DELETE call)
     @DeleteMapping("/{id}")
     public String deletePlayer(@PathVariable Long id) {
        playerService.deletePlayer(id);
        return "The player was successfully deleted!";
     }
-
-
 }
