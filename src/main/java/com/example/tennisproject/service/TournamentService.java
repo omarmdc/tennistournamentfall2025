@@ -23,11 +23,11 @@ public class TournamentService {
     private PlayerRepository playerRepository;   // for adding the players to the tournament later
 
     // Here we will create the logic of our program by making Helper methods, objects, and public functions
-    // to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses)).
+    // to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses))
 
 
-    // Here we will create our Helper Methods: converter() and responseMaker()
-    // These will help us convert and output info in a specific format (ex: adding the ID)
+    // We will create Helper Methods: converter() and responseMaker()
+    // these will help us convert and output info in a specific format (ex: adding the ID)
 
     private Tournament converter(TournamentRequest userRequest) {
 
@@ -69,7 +69,6 @@ public class TournamentService {
 
 
     // Now, our Public Methods: getAllTournaments() | getTournamentById() | createTournament() | regPlayerInTournament()
-
 
     // 1. 'getAllTournaments()' Method
     public List<TournamentResponse> getAllTournaments() {
@@ -117,7 +116,7 @@ public class TournamentService {
             tourney.setPlayers(new ArrayList<>());
         }
 
-        // Making sure we avoid duplicates
+        // Making sure we avoid duplicate tournament registrations
         if (tourney.getPlayers().contains(player)) {
             throw new RuntimeException("Sorry, that player is already in the tournament!");
         }
@@ -130,7 +129,3 @@ public class TournamentService {
         return responseMaker(savedTourney);
     }
 }
-
-
-
-

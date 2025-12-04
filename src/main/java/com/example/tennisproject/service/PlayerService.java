@@ -20,7 +20,7 @@ public class PlayerService {
     // to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses)).
 
 
-    // Here we will create our Helper Methods: converter() and responseMaker()
+    // We will create Helper Methods: converter() and responseMaker()
     // These will help us convert and output info in a specific format (ex: adding the ID)
 
     // converter()
@@ -118,12 +118,12 @@ public class PlayerService {
 
     // 5. 'deletePlayer()' Method
     public void deletePlayer(Long id) {
-        try {
-            Player playerToDelete = playerRepository.findById(id).get();
-            playerRepository.delete(playerToDelete);
-        }
-        catch (Exception e) {
-            throw new RuntimeException("Sorry, we weren't able to find a player with ID: " + id);
-        }
+       try {
+           Player playerToDelete = playerRepository.findById(id).get();
+           playerRepository.delete(playerToDelete);
+       }
+       catch (Exception e) {
+           throw new RuntimeException("Sorry, we weren't able to delete player with ID: " + id);
+       }
     }
 }

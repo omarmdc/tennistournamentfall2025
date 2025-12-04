@@ -27,7 +27,7 @@ public class Match {                // This is the 'Match' table in our database
 
     @ManyToOne
     @JoinColumn(name = "tournament_id")
-    private Tournament tournamentName;
+    private Tournament tournament;
 
     private LocalDate matchDate;
 
@@ -69,12 +69,12 @@ public class Match {                // This is the 'Match' table in our database
         this.winner = winner;
     }
 
-    public Tournament getTournamentName() {
-        return tournamentName;
+    public Tournament getTournament() {
+        return tournament;
     }
 
-    public void setTournamentName(Tournament tournamentName) {
-        this.tournamentName = tournamentName;
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
     }
 
     public LocalDate getMatchDate() {

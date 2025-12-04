@@ -11,8 +11,6 @@ import java.util.List;
 
 // This class is in charge of holding our API endpoints (GET and POST)
 
-
-
 @RestController
 @RequestMapping("/tournaments")
 public class TournamentController {
