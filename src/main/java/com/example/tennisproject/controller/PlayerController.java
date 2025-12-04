@@ -12,8 +12,6 @@ import java.util.List;
 
 // This class is in charge of holding our API endpoints (GET, POST, PUT, and DELETE)
 
-
-
 @RestController
 @RequestMapping("/players")
 public class PlayerController {

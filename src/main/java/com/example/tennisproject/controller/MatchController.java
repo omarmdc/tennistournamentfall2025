@@ -21,6 +21,7 @@ public class MatchController {
     private MatchService matchService;
 
 
+
     // 1) Record a match result (POST call)
     @PostMapping
     public MatchResponse recordMatch(@RequestBody MatchRequest userRequest) {
@@ -33,7 +34,4 @@ public class MatchController {
     public MatchResponse getMatchDetails(@PathVariable Long id) {
         return matchService.getMatchDetails(id);
     }
-
-
-
 }

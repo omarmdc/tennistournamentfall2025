@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+// Here we will create the logic of our program by making Helper methods, objects, and public functions
+// to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses))
+
+
 @Service
 public class TournamentService {
 
@@ -22,12 +26,9 @@ public class TournamentService {
     @Autowired
     private PlayerRepository playerRepository;   // for adding the players to the tournament later
 
-    // Here we will create the logic of our program by making Helper methods, objects, and public functions
-    // to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses))
 
 
-    // We will create Helper Methods: converter() and responseMaker()
-    // these will help us convert and output info in a specific format (ex: adding the ID)
+    // Build Helper Methods: 'converter()' and 'responseMaker()' to help us convert and output info in a specific format (e.g., adding the ID)
 
     private Tournament converter(TournamentRequest userRequest) {
 
@@ -68,7 +69,8 @@ public class TournamentService {
     }
 
 
-    // Now, our Public Methods: getAllTournaments() | getTournamentById() | createTournament() | regPlayerInTournament()
+
+    // Build Public Methods: getAllTournaments() | getTournamentById() | createTournament() | regPlayerInTournament()
 
     // 1. 'getAllTournaments()' Method
     public List<TournamentResponse> getAllTournaments() {

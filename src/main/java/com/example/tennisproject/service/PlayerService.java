@@ -14,6 +14,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// Here we will create the logic of our program by making Helper methods, objects, and public functions
+// to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses))
+
+
 @Service
 public class PlayerService {
 
@@ -28,12 +33,7 @@ public class PlayerService {
 
 
 
-    // Here we will create the logic of our program by making Helper methods, objects, and public functions
-    // to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses)).
-
-
-    // We will create Helper Methods: converter() and responseMaker()
-    // These will help us convert and output info in a specific format (ex: adding the ID)
+    // Build Helper Methods: 'converter()' and 'responseMaker()' to help us convert and output info in a specific format (e.g., adding the ID)
 
     // converter()
     private Player converter(PlayerRequest userRequest) {
@@ -48,6 +48,7 @@ public class PlayerService {
 
         return player;
     }
+
 
     //responseMaker()
     private PlayerResponse responseMaker(Player player) {
@@ -66,8 +67,7 @@ public class PlayerService {
 
 
 
-    // Now, our Public Methods: getAllPlayers() | getPlayerById() | registerPlayer() | updatePlayer() | deletePlayer()
-
+    // Build Public Methods: getAllPlayers() | getPlayerById() | registerPlayer() | updatePlayer() | deletePlayer()
 
     // 1. 'getAllPlayers()' Method
     public List<PlayerResponse> getAllPlayers() {

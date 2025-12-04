@@ -18,6 +18,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
+// Here we will create the logic of our program by making a helper method, objects, and public functions
+// to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses))
+
+
 @Service
 public class MatchService {
 
@@ -30,11 +35,9 @@ public class MatchService {
     @Autowired
     private TournamentRepository tournamentRepository;
 
-    // Here we will create the logic of our program by making a helper method, objects, and public functions
-    // to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses))
 
-    // We will create a Helper Method: responseMaker()
-    // It will help us convert and output info in a specific format (ex: adding the ID's)
+
+    // Build a Helper Method: 'responseMaker()' which will help us convert and output info in a specific format (ex: adding the ID's)
 
     private MatchResponse responseMaker(Match match) {
 
@@ -52,7 +55,8 @@ public class MatchService {
     }
 
 
-    // Now, our Public Methods: recordMatch() | getMatchDetails() | getPlayerRankings()
+
+    // Build Public Methods: recordMatch() | getMatchDetails() | getPlayerRankings()
 
     // 1) 'recordMatch' Method
     public MatchResponse recordMatch(MatchRequest userRequest) {
@@ -87,7 +91,7 @@ public class MatchService {
             throw new RuntimeException("Invalid winner, you must choose either Player 1 or Player 2");
         }
 
-        // Update players' stats after match (WIN or LOSS to each)
+        // Update players' stats after the match (WIN or LOSS to each)
         if (player1.getId().equals(winner.getId())) {
 
             player1.setWins(player1.getWins() + 1);
@@ -133,6 +137,7 @@ public class MatchService {
             throw new RuntimeException("Oops, we couldn't find a match with ID: " + id);
         }
     }
+
 
     // 3) 'getPlayersRankings' Method
     public List<PlayerResponse> getPlayersRankings() {
