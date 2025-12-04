@@ -2,8 +2,12 @@ package com.example.tennisproject.service;
 
 import com.example.tennisproject.dto.requests.PlayerRequest;
 import com.example.tennisproject.dto.responses.PlayerResponse;
+import com.example.tennisproject.entity.Match;
 import com.example.tennisproject.entity.Player;
+import com.example.tennisproject.entity.Tournament;
+import com.example.tennisproject.repository.MatchRepository;
 import com.example.tennisproject.repository.PlayerRepository;
+import com.example.tennisproject.repository.TournamentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +19,14 @@ public class PlayerService {
 
     @Autowired
     private PlayerRepository playerRepository;
+
+    @Autowired
+    private MatchRepository matchRepository;           // needed to delete a player from match
+
+    @Autowired
+    private TournamentRepository tournamentRepository; // needed to delete a player from tournaments
+
+
 
     // Here we will create the logic of our program by making Helper methods, objects, and public functions
     // to deal with user's requests and responses (all by using the 'dto' files (Requests & Responses)).
@@ -118,9 +130,41 @@ public class PlayerService {
 
     // 5. 'deletePlayer()' Method
     public void deletePlayer(Long id) {
+
+        Player player;
+
+        try {
+            player = playerRepository.findById(id).get();
+        }
+        catch (Exception e) {
+            throw new RuntimeException("Sorry, we weren't able to delete or locate a player with ID: " + id);
+        }
+
+
+        // delete that player's games before deleting the player from the database
+        List<Match> matches = matchRepository.findAll();
+
+        for (Match match : matches) {
+            if(match.getPlayer1().getId().equals(player.getId()) || match.getPlayer2().getId().equals(player.getId())) {
+                matchRepository.delete(match);
+            }
+        }
+
+
+        // delete player from any tournaments before deleting it from the database
+        List<Tournament> tourneys = tournamentRepository.findAll();
+
+        for (Tournament tourney : tourneys) {
+            if (tourney.getPlayers().contains(player)) {
+                tourney.getPlayers().remove(player);
+                tournamentRepository.save(tourney);
+            }
+        }
+
+
+        // delete the player from database
        try {
-           Player playerToDelete = playerRepository.findById(id).get();
-           playerRepository.delete(playerToDelete);
+           playerRepository.delete(player);
        }
        catch (Exception e) {
            throw new RuntimeException("Sorry, we weren't able to delete player with ID: " + id);

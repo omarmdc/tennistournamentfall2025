@@ -72,7 +72,7 @@ public class MatchService {
             throw new RuntimeException("Sorry, players must be registered");
         }
         if (!tournament.getPlayers().contains(player1) && !tournament.getPlayers().contains(player2)) {
-            throw new RuntimeException("Sorry, none of the players are registered yet");
+            throw new RuntimeException("Sorry, none of the players are registered in the tournament yet");
         }
         else if (!tournament.getPlayers().contains(player1) || !tournament.getPlayers().contains(player2)) {
             throw new RuntimeException("Sorry, 1 of the 2 players is not registered yet");
