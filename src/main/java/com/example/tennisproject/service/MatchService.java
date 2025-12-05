@@ -76,7 +76,7 @@ public class MatchService {
             throw new RuntimeException("Sorry, players must be registered");
         }
         if (!tournament.getPlayers().contains(player1) && !tournament.getPlayers().contains(player2)) {
-            throw new RuntimeException("Sorry, none of the players are registered in the tournament yet");
+            throw new RuntimeException("Sorry, none of the players selected are registered in the tournament yet");
         }
         else if (!tournament.getPlayers().contains(player1) || !tournament.getPlayers().contains(player2)) {
             throw new RuntimeException("Sorry, 1 of the 2 players is not registered yet");
@@ -86,10 +86,12 @@ public class MatchService {
         // declare the winner
         Player winner = playerRepository.findById(userRequest.getWinnerId()).get();
 
+
         // Make sure winner is either player1 or player2
         if (!winner.getId().equals(player1.getId()) && !winner.getId().equals(player2.getId())) {
             throw new RuntimeException("Invalid winner, you must choose either Player 1 or Player 2");
         }
+
 
         // Update players' stats after the match (WIN or LOSS to each)
         if (player1.getId().equals(winner.getId())) {
@@ -107,7 +109,6 @@ public class MatchService {
         playerRepository.save(player2);
 
 
-
         // create the match
         Match match = new Match();
 
@@ -121,7 +122,6 @@ public class MatchService {
 
         // Save the finished version of the match created
         Match finished = matchRepository.save(match);
-
         return responseMaker(finished);
     }
 
@@ -150,6 +150,7 @@ public class MatchService {
                 return player2.getWins() - player1.getWins();   // if return num is negative, player1 comes first
             }                                                   // else, player 2 comes first
         });
+
 
         // Pass response > object > list
         List<PlayerResponse> rankingsList = new ArrayList<>();

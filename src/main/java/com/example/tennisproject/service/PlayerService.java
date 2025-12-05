@@ -121,8 +121,8 @@ public class PlayerService {
             Player newPlayer = playerRepository.save(currPlayer);
 
             return responseMaker(newPlayer);
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new RuntimeException("Sorry, we weren't able to update the player with ID: " + id);
         }
     }
