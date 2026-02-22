@@ -28,6 +28,7 @@ public class Player {               // This is the Player table in our database
 
     // Getters and Setters creation
 
+    // Id
     public Long getId() {
         return id;
     }
@@ -36,6 +37,8 @@ public class Player {               // This is the Player table in our database
         this.id = id;
     }
 
+
+    // Name
     public String getName() {
         return name;
     }
@@ -44,6 +47,8 @@ public class Player {               // This is the Player table in our database
         this.name = name;
     }
 
+
+    // Country
     public String getCountry() {
         return country;
     }
@@ -52,6 +57,8 @@ public class Player {               // This is the Player table in our database
         this.country = country;
     }
 
+
+    // Age
     public int getAge() {
         return age;
     }
@@ -60,6 +67,8 @@ public class Player {               // This is the Player table in our database
         this.age = age;
     }
 
+
+    // Wins
     public int getWins() {
         return wins;
     }
@@ -68,6 +77,8 @@ public class Player {               // This is the Player table in our database
         this.wins = wins;
     }
 
+
+    // Losses
     public int getLosses() {
         return losses;
     }

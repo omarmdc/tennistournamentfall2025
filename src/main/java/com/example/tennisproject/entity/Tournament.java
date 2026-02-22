@@ -7,17 +7,13 @@ import java.util.List;
 public class Tournament {               // This is the 'Tournament' table in our database
 
     // Each of these will be the columns of the 'Tournament' table
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-
     private String location;
-
     private LocalDate startDate;
-
     private LocalDate endDate;
 
     @ManyToMany
@@ -31,7 +27,7 @@ public class Tournament {               // This is the 'Tournament' table in our
 
     // Getters and Setters creation
 
-
+    // Id
     public Long getId() {
         return id;
     }
@@ -39,6 +35,8 @@ public class Tournament {               // This is the 'Tournament' table in our
         this.id = id;
     }
 
+
+    // Name
     public String getName() {
         return name;
     }
@@ -46,6 +44,8 @@ public class Tournament {               // This is the 'Tournament' table in our
         this.name = name;
     }
 
+
+    // Location
     public String getLocation() {
         return location;
     }
@@ -53,6 +53,8 @@ public class Tournament {               // This is the 'Tournament' table in our
         this.location = location;
     }
 
+
+    // Start date
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -60,6 +62,8 @@ public class Tournament {               // This is the 'Tournament' table in our
         this.startDate = startDate;
     }
 
+
+    // End date
     public LocalDate getEndDate() {
         return endDate;
     }
@@ -67,6 +71,8 @@ public class Tournament {               // This is the 'Tournament' table in our
         this.endDate = endDate;
     }
 
+
+    // Get players
     public List<Player> getPlayers() {
         return players;
     }

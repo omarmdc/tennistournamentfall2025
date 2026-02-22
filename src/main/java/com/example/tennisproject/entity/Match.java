@@ -36,8 +36,9 @@ public class Match {                // This is the 'Match' table in our database
 
     // Getters and Setters creation
 
-
+    // id
     public Long getId() {
+
         return id;
     }
 
@@ -45,6 +46,8 @@ public class Match {                // This is the 'Match' table in our database
         this.id = id;
     }
 
+
+    // Player 1
     public Player getPlayer1() {
         return player1;
     }
@@ -53,6 +56,8 @@ public class Match {                // This is the 'Match' table in our database
         this.player1 = player1;
     }
 
+
+    // Player 2
     public Player getPlayer2() {
         return player2;
     }
@@ -61,6 +66,8 @@ public class Match {                // This is the 'Match' table in our database
         this.player2 = player2;
     }
 
+
+    // Winner
     public Player getWinner() {
         return winner;
     }
@@ -69,6 +76,8 @@ public class Match {                // This is the 'Match' table in our database
         this.winner = winner;
     }
 
+
+    // Tournament
     public Tournament getTournament() {
         return tournament;
     }
@@ -77,6 +86,8 @@ public class Match {                // This is the 'Match' table in our database
         this.tournament = tournament;
     }
 
+
+    // Match Date
     public LocalDate getMatchDate() {
         return matchDate;
     }
@@ -85,6 +96,8 @@ public class Match {                // This is the 'Match' table in our database
         this.matchDate = matchDate;
     }
 
+
+    // Score
     public String getScore() {
         return score;
     }
